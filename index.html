@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bjørnsveen Skaperverksted - Utstyr og Muligheter</title>
+    <title>Bjørnsveen Skaperverksted - Om Oss og Utstyr</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,10 +16,10 @@
             <li><a href="#hero">Hjem</a></li>
             <li><a href="#about">Visjon</a></li>
             <li><a href="#current-equipment">Vårt Utstyr</a></li>
+            <li><a href="#about-us">Hvem er vi?</a></li>
             <li><a href="#inclusion">Inkludering</a></li>
             <li><a href="#sustainability">Bærekraft</a></li>
             <li><a href="#challenges">Utfordringer</a></li>
-            <li><a href="#equipment">Fremtidsplaner</a></li>
         </ul>
     </nav>
 
@@ -57,31 +57,35 @@
                 
                 <div id="equipment-info-card" class="info-card hidden">
                     <h3 id="selected-title">Maskinnavn</h3>
-                    <p id="selected-description">Beskrivelse av maskinen og dens bruksområde vil vises her.</p>
+                    <p id="selected-description">Beskrivelse vises her.</p>
                     <a href="#" id="product-link" target="_blank" class="secondary-button">Gå til produktside</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="school" class="section-light">
+    <section id="about-us" class="section-light">
         <div class="container">
-            <h2>Modernisering av Skolehverdagen</h2>
-            <p class="section-intro">Gjennom tett sambruk sikrer vi at 300 ungdomsskoleelever har tilgang til fremtidens verktøy i skoletiden.</p>
-            <div class="split-content">
-                <div class="content-box">
-                    <h3>Faglig Fornyelse</h3>
-                    <p>Skaperverkstedet er en integrert del av undervisningen som moderniserer og praktiserer fagene:</p>
-                    <ul class="custom-list">
-                        <li><strong>Arbeidslivsfag:</strong> Fra idé til ferdig produkt og entreprenørskap.</li>
-                        <li><strong>Kunst og Håndverk:</strong> Digitalt design møter tradisjonelle teknikker.</li>
-                        <li><strong>Matematikk:</strong> Geometri og kalkulasjon anvendt i fysisk produksjon.</li>
-                        <li><strong>Naturfag:</strong> Prototyping og utforsking av teknologiske prinsipper.</li>
-                    </ul>
+            <h2>Hvem er vi?</h2>
+            <div class="tabs-wrapper">
+                <div class="tab-controls">
+                    <button class="tab-control active" data-target="info-tab">Om organisasjonen</button>
+                    <button class="tab-control" data-target="board-tab">Styret</button>
                 </div>
-                <div class="content-box">
-                    <h3>Samarbeid med Kommunen</h3>
-                    <p>I tett samarbeid med <strong>Gjøvik Kommune</strong> bygger vi en bro mellom den formelle skolen og det frivillige fritidstilbudet.</p>
+                <div class="tab-content-area">
+                    <div id="info-tab" class="tab-pane active">
+                        <h3>Frivillig Skaperglede</h3>
+                        <p>Bjørnsveen Skaperverksted er en <strong>frivillig organisasjon</strong> basert på Gjøvik. Vi er stolt medlem av <strong>Frivillighetsregisteret</strong> og brenner for å skape en inkluderende arena der barn og unge får utforske teknologi og håndverk i trygge rammer.</p>
+                        <p>Gjennom samarbeidet med Bjørnsveen Ungdomsskole og Gjøvik Kommune sikrer vi at moderne verktøy blir tilgjengelig for alle, uavhengig av bakgrunn.</p>
+                    </div>
+                    <div id="board-tab" class="tab-pane">
+                        <h3>Vårt Styre</h3>
+                        <ul class="board-member-list">
+                            <li><strong>Eirik Ditlefsen Gaarde:</strong> Styreleder</li>
+                            <li><strong>Fredrik Nordbrøden Arntsen:</strong> Kasserer</li>
+                            <li><strong>Linda Lium Martinsen:</strong> Styremedlem</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -93,28 +97,27 @@
             <p class="highlight-text">Gratis* for alle under 24 år.</p>
             <div class="inclusion-grid-dark">
                 <div class="text-block">
-                    <p>Bjørnsveen Skaperverksted er et lavterskeltilbud som fanger opp grupper som ikke alltid finner sin plass i tradisjonelle aktiviteter som idrett. Her er det ingen krav til fysiske prestasjoner – bare til nysgjerrighet.</p>
+                    <p>Vi fanger opp grupper som ikke alltid finner sin plass i idretten. Her er det ingen krav til prestasjon – bare til nysgjerrighet og fikling.</p>
                 </div>
                 <div class="text-block">
-                    <p>Vi fjerner økonomiske barrierer og gir ungdommer opplæring i avanserte digitale verktøy. Vi skaper en arena for mestring og tilhørighet på tvers av bakgrunn.</p>
+                    <p>Vi gir ungdommer opplæring i avanserte digitale verktøy og skaper en arena for mestring på tvers av sosioøkonomisk status.</p>
                 </div>
             </div>
-            <p class="footnote">* Medlemmer betaler en årlig kontingent på kun 50 kr. Vi søker for øyeblikket om midler for å kunne tilby gratis forbruksmateriell til alle under 24 år.</p>
+            <p class="footnote">* Medlemmer betaler en årlig kontingent på kun 50 kr. Vi søker midler for å sikre helt gratis forbruksmateriell for alle under 24 år.</p>
         </div>
     </section>
 
     <section id="sustainability" class="section-light">
         <div class="container">
             <h2>Bærekraft og Ressursbevissthet</h2>
-            <p class="section-intro">Vi utdanner morgendagens skapere til å tenke sirkulært og ta vare på ressursene våre.</p>
             <div class="split-content">
                 <div class="content-box">
                     <h3>Reparasjon og Gjenbruk</h3>
-                    <p>I stedet for å kaste, lærer vi hvordan vi kan fikse. Verkstedet fungerer som et senter for reparasjon.</p>
+                    <p>Vi lærer hvordan vi fikser i stedet for å kaste. Verkstedet er et senter for sirkulær tenking.</p>
                 </div>
                 <div class="content-box">
-                    <h3>Produksjon av Reservedeler</h3>
-                    <p>Med 3D-printing kan vi produsere reservedeler som ellers er umulige å få tak i, og forlenge levetiden til hverdagsprodukter.</p>
+                    <h3>Reservedeler</h3>
+                    <p>Med 3D-printing produserer vi deler som forlenger levetiden til produkter som ellers ville blitt avfall.</p>
                 </div>
             </div>
         </div>
@@ -122,43 +125,19 @@
 
     <section id="challenges" class="section-dark">
         <div class="container">
-            <h2>Tekniske Utfordringer & Behov</h2>
+            <h2>Tekniske Utfordringer</h2>
             <div class="equipment-grid">
                 <div class="equip-card challenge-card">
-                    <h3>Maskinvare (MacBooks)</h3>
-                    <p>Vi har et kritisk behov for moderne og kraftige datamaskiner (MacBooks) for å drive avansert programvare.</p>
+                    <h3>MacBooks</h3>
+                    <p>Vi trenger kraftig maskinvare for å drive programvaren bak maskinparken.</p>
                 </div>
                 <div class="equip-card challenge-card">
-                    <h3>Nettverk & IT</h3>
-                    <p>Etablering av et robust nettverk som takler tung datatrafikk og trådløs maskinkommunikasjon.</p>
+                    <h3>Nettverk</h3>
+                    <p>Vi trenger et robust IT-miljø for trådløs maskinkommunikasjon.</p>
                 </div>
                 <div class="equip-card challenge-card">
                     <h3>Infrastruktur</h3>
-                    <p>Sikring av strømkapasitet og forskriftsmessig ventilasjon for trygg drift.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="equipment" class="section-light">
-        <div class="container">
-            <h2>Fremtidsplaner (Søknad om midler)</h2>
-            <p class="status-note"><em>Status: Søkt om 803 000 kr. Midler er ikke innvilget pr. nå.</em></p>
-            <div class="equipment-grid">
-                <div class="equip-card">
-                    <h3>Digital Fabrikasjon</h3>
-                    <ul>
-                        <li>6 stk. Bambu Lab P2S (Ytterligere)</li>
-                        <li>1 stk. Bambu Lab H2C</li>
-                        <li>3 stk. xTool laserkuttere</li>
-                    </ul>
-                </div>
-                <div class="equip-card">
-                    <h3>SoftLab Utvidelse</h3>
-                    <ul>
-                        <li>Overlock- og broderimaskin</li>
-                        <li>Avansert tekstiltrykk</li>
-                    </ul>
+                    <p>Fokus på strømkapasitet og ventilasjon/avsug for trygg produksjon.</p>
                 </div>
             </div>
         </div>
