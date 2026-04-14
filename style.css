@@ -1,4 +1,4 @@
-/* Version: #7 */
+/* Version: #9 */
 
 /* === SEKSJON: Globale variabler og Reset === */
 :root {
@@ -10,7 +10,6 @@
     --text-light: #ffffff;
     --container-width: 1200px;
     --accent-blue: #00d2ff; /* Aksentfarge for tekniske utfordringer og bærekraft */
-    --success-green: #2ecc71; /* Mulig fremtidig bruk for bærekraft/suksess */
 }
 
 * {
@@ -97,7 +96,7 @@ body {
 
 .hero-logo {
     width: 100%;
-    max-width: 625px;
+    max-width: 625px; /* 250% størrelse opprettholdt */
     height: auto;
     border-radius: 20px;
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6);
@@ -167,12 +166,10 @@ section h2::after {
     max-width: 800px;
     margin: -1rem auto 3rem auto;
     font-size: 1.2rem;
-    color: #666;
 }
 
-.section-dark .section-intro {
-    color: #a0a0b5;
-}
+.section-light .section-intro { color: #666; }
+.section-dark .section-intro { color: #a0a0b5; }
 
 .section-light {
     background-color: var(--bg-light);
@@ -184,98 +181,103 @@ section h2::after {
     color: var(--text-light);
 }
 
-/* === SEKSJON: Layout Spesifikke Elementer === */
-.split-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    margin-top: 3rem;
-}
-
-.content-box {
+/* === SEKSJON: Interaktivt Utvalg (Dropdown) === */
+.dropdown-container {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
     background-color: rgba(255, 255, 255, 0.05);
-    padding: 2.5rem;
-    border-radius: 15px;
+    padding: 3rem;
+    border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.section-light .content-box {
-    background-color: white;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    border: 1px solid #eee;
-}
-
-.content-box h3 {
-    font-size: 1.5rem;
+.dropdown-container label {
+    display: block;
     margin-bottom: 1rem;
-    color: var(--primary-color);
-}
-
-.highlight-text {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.inclusion-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-    background-color: white;
-    padding: 3rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    border-left: 5px solid var(--primary-color);
-    margin-top: 2rem;
-}
-
-.inclusion-grid p {
     font-size: 1.1rem;
-    color: #555;
-}
-
-.custom-list {
-    list-style: none;
-    margin-top: 1.5rem;
-}
-
-.custom-list li {
-    margin-bottom: 1rem;
-    padding-left: 2.5rem;
-    position: relative;
-    font-size: 1.1rem;
-}
-
-.custom-list li::before {
-    content: '→';
-    color: var(--primary-color);
-    position: absolute;
-    left: 0;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-/* Bærekraft Fokusboks */
-.sustainability-focus {
-    background-color: rgba(0, 210, 255, 0.05);
-    border-left: 4px solid var(--accent-blue);
-    padding: 1.5rem 2rem;
-    margin-top: 3rem;
-    border-radius: 0 10px 10px 0;
-    font-size: 1.15rem;
-}
-
-.section-dark .sustainability-focus {
     color: #d1d1e0;
 }
 
-.section-dark .sustainability-focus strong {
-    color: var(--accent-blue);
+.styled-select {
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+    background-color: #24243e;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 2rem;
 }
 
-/* === SEKSJON: Grid og Kort === */
+.info-card {
+    background-color: white;
+    color: var(--text-dark);
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    margin-top: 1rem;
+    border-top: 5px solid var(--primary-color);
+    transition: all 0.4s ease;
+}
+
+.info-card.hidden {
+    display: none;
+}
+
+.info-card h3 {
+    margin-bottom: 1rem;
+    color: var(--bg-dark);
+}
+
+.info-card p {
+    margin-bottom: 1.5rem;
+}
+
+.secondary-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--bg-dark);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.secondary-button:hover {
+    background-color: var(--primary-color);
+}
+
+/* === SEKSJON: Inkludering og Fotnoter === */
+.inclusion-grid-dark {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    margin: 2rem 0;
+}
+
+.inclusion-grid-dark .text-block p {
+    font-size: 1.1rem;
+    color: #d1d1e0;
+}
+
+.footnote {
+    font-size: 0.9rem;
+    color: #888;
+    text-align: center;
+    margin-top: 2rem;
+    font-style: italic;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* === SEKSJON: Grid og Kort (Fikset lesbarhet) === */
 .equipment-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -293,47 +295,9 @@ section h2::after {
     overflow: hidden;
 }
 
-.equip-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
-    pointer-events: none;
-}
-
-.equip-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-}
-
-.challenge-card {
-    background-color: #ffffff;
-    border-top: 5px solid var(--accent-blue);
-    color: var(--text-dark);
-}
-
-.challenge-card h3 {
-    color: var(--accent-blue) !important;
-}
-
-/* Eksplisitt fargestyring for tekst i kort basert på omgivelsene (Løser lesbarhetsproblemet) */
-.section-light .equip-card h3,
-.section-light .challenge-card h3 {
-    color: var(--text-dark);
-}
-
-.section-light .equip-card p,
-.section-light .challenge-card p,
-.section-light .equip-card li {
-    color: #555;
-}
-
-.section-dark .equip-card,
+.section-dark .equip-card, 
 .section-dark .challenge-card {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.07);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -341,40 +305,80 @@ section h2::after {
     border-top: 5px solid var(--accent-blue);
 }
 
+/* Tvinger tekstfarge i alle kort i mørke seksjoner til å være lys */
 .section-dark .equip-card h3,
 .section-dark .challenge-card h3 {
     color: var(--text-light);
+    margin-bottom: 1rem;
 }
 
-/* Tvinger teksten til å bli lys og leselig på mørk bakgrunn */
 .section-dark .equip-card p,
 .section-dark .challenge-card p,
 .section-dark .equip-card li {
-    color: #d1d1e0; 
+    color: #e0e0f0 !important; /* Løser problemet fra bildet */
+    opacity: 1;
 }
 
-.equip-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
+.section-light .equip-card {
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    border-top: 5px solid var(--primary-color);
 }
 
-.equip-card ul {
+.section-light .equip-card h3 { color: var(--text-dark); }
+.section-light .equip-card p, 
+.section-light .equip-card li { color: #555; }
+
+/* === SEKSJON: Layout og Lister === */
+.split-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.content-box {
+    padding: 2.5rem;
+    border-radius: 15px;
+}
+
+.section-dark .content-box {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-light .content-box {
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.custom-list {
     list-style: none;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
-.equip-card li {
-    margin-bottom: 0.8rem;
-    padding-left: 1.5rem;
+.custom-list li {
+    margin-bottom: 1rem;
+    padding-left: 2.5rem;
     position: relative;
 }
 
-.equip-card li::before {
-    content: '▹';
+.custom-list li::before {
+    content: '→';
     color: var(--primary-color);
     position: absolute;
     left: 0;
     font-weight: bold;
+}
+
+.highlight-text {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 /* === SEKSJON: Footer === */
@@ -382,33 +386,17 @@ footer {
     background-color: #0f0f1a;
     color: #666;
     text-align: center;
-    padding: 2.5rem 0;
-    font-size: 0.95rem;
+    padding: 3rem 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-/* === SEKSJON: Responsivt Design (Mobil) === */
+/* === SEKSJON: Responsivt Design === */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    
-    .section-hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero-logo {
-        max-width: 90%;
-    }
-    
-    .split-content,
-    .inclusion-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .inclusion-grid {
-        padding: 1.5rem;
-    }
+    .nav-links { display: none; }
+    .section-hero h1 { font-size: 2.5rem; }
+    .hero-logo { max-width: 90%; }
+    .split-content, .inclusion-grid-dark { grid-template-columns: 1fr; }
+    .dropdown-container { padding: 1.5rem; }
 }
 
-/* Version: #7 */
+/* Version: #9 */
