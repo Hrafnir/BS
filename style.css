@@ -1,4 +1,4 @@
-/* Version: #13 */
+/* Version: #14 */
 
 /* === SEKSJON: Globale variabler og Reset === */
 :root {
@@ -160,7 +160,7 @@ body {
 
 .timeline-dot {
     position: absolute;
-    left: -26px; /* Senterer prikken på linjen (linje 4px + padding 2rem) */
+    left: -26px; 
     top: 5px;
     width: 20px;
     height: 20px;
@@ -207,7 +207,7 @@ body {
     color: #a0a0b5;
 }
 
-/* === SEKSJON: Standard Seksjoner === */
+/* === SEKSJON: Standard Seksjoner & Typografi === */
 section {
     padding: 6rem 0;
 }
@@ -228,6 +228,24 @@ section h2::after {
     border-radius: 2px;
 }
 
+/* NYTT: Styling for underoverskrifter (Bærekraft m.m.) */
+.sub-heading {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.section-light .sub-heading {
+    color: var(--text-dark);
+}
+
+.section-dark .sub-heading {
+    color: var(--text-light);
+}
+
 .section-light { background-color: var(--bg-light); color: var(--text-dark); }
 .section-dark { background-color: var(--bg-dark); color: var(--text-light); }
 
@@ -240,7 +258,7 @@ section h2::after {
 
 .section-dark .section-intro { color: #a0a0b5; }
 
-/* === SEKSJON: Utstyrsvelger (Light adapt) === */
+/* === SEKSJON: Utstyrsvelger === */
 .dropdown-container-light {
     max-width: 700px;
     margin: 0 auto;
@@ -337,11 +355,19 @@ section h2::after {
     border-color: rgba(255,255,255,0.1);
 }
 
-/* === SEKSJON: Kort (Håndterer fargeforskjeller) === */
+/* Typografi inni bokser (FNs bærekraftsmål) */
+.content-box h4 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+/* === SEKSJON: Kort === */
 .equipment-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    margin-top: 2rem;
 }
 
 .equip-card {
@@ -379,4 +405,4 @@ footer {
     .timeline-container { padding-left: 1rem; }
 }
 
-/* Version: #13 */
+/* Version: #14 */
