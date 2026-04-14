@@ -1,4 +1,4 @@
-/* Version: #5 */
+/* Version: #6 */
 
 /* === SEKSJON: Globale variabler og Reset === */
 :root {
@@ -24,7 +24,7 @@ html {
 }
 
 body {
-    line-height: 1.6;
+    line-height: 1.7; /* Økt litt for bedre lesbarhet på lengre tekster */
     color: var(--text-dark);
     background-color: var(--bg-light);
 }
@@ -95,7 +95,7 @@ body {
 }
 
 .hero-logo {
-    /* Oppdatert størrelse: 250% av opprinnelig 250px = 625px */
+    /* Størrelse: 250% av opprinnelig 250px = 625px */
     width: 100%;
     max-width: 625px;
     height: auto;
@@ -219,16 +219,44 @@ section h2::after {
     margin-bottom: 2rem;
 }
 
-.status-note {
-    text-align: center;
+/* Ny Inkluderings-grid for bedre tekstlayout */
+.inclusion-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    background-color: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--primary-color);
+    margin-top: 2rem;
+}
+
+.inclusion-grid p {
     font-size: 1.1rem;
-    color: #a0a0b5;
-    max-width: 800px;
-    margin: 0 auto 3rem auto;
-    padding: 1.5rem;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-left: 4px solid var(--primary-color);
-    border-radius: 0 10px 10px 0;
+    color: #555;
+}
+
+/* Ny styling for tilpassede lister (Skolefag) */
+.custom-list {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.custom-list li {
+    margin-bottom: 1rem;
+    padding-left: 2.5rem;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.custom-list li::before {
+    content: '→';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 /* === SEKSJON: Grid og Kort === */
@@ -236,6 +264,7 @@ section h2::after {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    margin-top: 2rem;
 }
 
 .equip-card {
@@ -244,6 +273,19 @@ section h2::after {
     border-radius: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-top: 5px solid var(--primary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.equip-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+    pointer-events: none;
 }
 
 .equip-card:hover {
@@ -258,11 +300,18 @@ section h2::after {
     color: var(--text-dark);
 }
 
+.section-dark .challenge-card {
+    background-color: rgba(255, 255, 255, 0.05); /* Tilpasset for mørk bakgrunn i seksjon #6 */
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 5px solid var(--accent-blue);
+}
+
 .challenge-card h3 {
     color: var(--accent-blue) !important;
 }
 
-.challenge-card p {
+.section-light .challenge-card p {
     color: #555;
 }
 
@@ -272,8 +321,13 @@ section h2::after {
     color: var(--text-light);
 }
 
+.section-light .equip-card h3 {
+    color: var(--text-dark);
+}
+
 .equip-card ul {
     list-style: none;
+    margin-top: 1rem;
 }
 
 .equip-card li {
@@ -281,6 +335,10 @@ section h2::after {
     padding-left: 1.5rem;
     position: relative;
     color: #d1d1e0;
+}
+
+.section-light .equip-card li {
+    color: #555;
 }
 
 .equip-card li::before {
@@ -296,8 +354,8 @@ footer {
     background-color: #0f0f1a;
     color: #666;
     text-align: center;
-    padding: 2rem 0;
-    font-size: 0.9rem;
+    padding: 2.5rem 0;
+    font-size: 0.95rem;
 }
 
 /* === SEKSJON: Responsivt Design (Mobil) === */
@@ -311,12 +369,18 @@ footer {
     }
     
     .hero-logo {
-        max-width: 90%; /* Gjør logoen mer fleksibel på små skjermer */
+        max-width: 90%;
     }
     
-    .split-content {
+    .split-content,
+    .inclusion-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .inclusion-grid {
+        padding: 1.5rem;
     }
 }
 
-/* Version: #5 */
+/* Version: #6 */
