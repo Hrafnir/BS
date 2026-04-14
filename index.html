@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bjørnsveen Skaperverksted - Forside</title>
+    <title>Bjørnsveen Skaperverksted - Forside og Fremdrift</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,10 +15,11 @@
         <ul class="nav-links">
             <li><a href="#hero">Hjem</a></li>
             <li><a href="#about">Visjon</a></li>
+            <li><a href="#timeline">Tidslinje</a></li>
             <li><a href="#current-equipment">Vårt Utstyr</a></li>
-            <li><a href="om-oss.html">Hvem er vi?</a></li> <li><a href="#inclusion">Inkludering</a></li>
+            <li><a href="om-oss.html">Hvem er vi?</a></li>
+            <li><a href="#inclusion">Inkludering</a></li>
             <li><a href="#sustainability">Bærekraft</a></li>
-            <li><a href="#challenges">Utfordringer</a></li>
         </ul>
     </nav>
 
@@ -26,8 +27,8 @@
         <div class="hero-content">
             <img src="images/BS.png" alt="Bjørnsveen Skaperverksted Logo" class="hero-logo">
             <h1>Bjørnsveen Skaperverksted</h1>
-            <p class="hero-subtitle">En levende idé i konstant vekst og utvikling</p>
-            <a href="#current-equipment" class="cta-button">Se hva vi har i dag</a>
+            <p class="hero-subtitle">Morgendagens skapere utvikles her og nå</p>
+            <a href="#timeline" class="cta-button">Se vår tidsplan</a>
         </div>
     </header>
 
@@ -38,14 +39,58 @@
         </div>
     </section>
 
-    <section id="current-equipment" class="section-dark">
+    <section id="timeline" class="section-dark">
+        <div class="container">
+            <h2>Hvor er vi nå, og veien videre</h2>
+            <p class="section-intro">Prosjektet er i en aktiv fase med høy fremdrift. Her er våre milepæler for 2026.</p>
+            
+            <div class="timeline-container">
+                <div class="timeline-item active">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Nå (April - Mai)</div>
+                    <div class="timeline-content">
+                        <h3>Strategisk fase</h3>
+                        <p>Vi søker midler, driver med internopplæring og analyserer mulighetsrommet samt utfordringene vi står overfor.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Slutten av Juni</div>
+                    <div class="timeline-content">
+                        <h3>Planleggingsfase</h3>
+                        <p>Evaluering av tildelt støtte. Vi utarbeider en konkret plan for innkjøp og organisering basert på de økonomiske rammene.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">August</div>
+                    <div class="timeline-content">
+                        <h3>Etableringsfase</h3>
+                        <p>Vi begynner å innrede og bygge skaperverkstedet fysisk i Glassoasen og Biblioteket.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Høsten 2026</div>
+                    <div class="timeline-content">
+                        <h3>Driftsfase</h3>
+                        <p>Oppstart av inkluderende prosjekter, nye søknader og videreutvikling av tilbudet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="current-equipment" class="section-light">
         <div class="container">
             <h2>Vårt Utstyr i Dag</h2>
-            <p class="section-intro">Vi er allerede godt i gang! Her er en oversikt over maskinene som er operative i verkstedet akkurat nå.</p>
+            <p class="section-intro">Oversikt over maskinene som er operative i verkstedet akkurat nå.</p>
             
-            <div class="dropdown-container">
-                <label for="equipment-select">Velg en maskin for å lese mer:</label>
-                <select id="equipment-select" class="styled-select">
+            <div class="dropdown-container-light">
+                <select id="equipment-select" class="styled-select-light">
                     <option value="" disabled selected>-- Velg utstyr --</option>
                     <option value="bambu">2x Bambu Lab P2S Combo</option>
                     <option value="prusa">3x Prusa Mini+ maskiner</option>
@@ -63,49 +108,49 @@
         </div>
     </section>
 
-    <section id="inclusion" class="section-light">
+    <section id="inclusion" class="section-dark">
         <div class="container">
             <h2>En Arena for Alle</h2>
             <p class="highlight-text">Gratis* for alle under 24 år.</p>
-            <div class="inclusion-grid">
-                <p>Vi fanger opp grupper som ikke alltid finner sin plass i idretten. Her er det ingen krav til prestasjon – bare til nysgjerrighet og fikling.</p>
-                <p>Vi gir ungdommer opplæring i avanserte digitale verktøy og skaper en arena for mestring på tvers av sosioøkonomisk status.</p>
+            <div class="inclusion-grid-dark">
+                <p>Vi fanger opp grupper som ikke alltid finner sin plass i idretten. Ingen krav til prestasjon – bare til nysgjerrighet og fikling.</p>
+                <p>Opplæring i avanserte digitale verktøy skaper mestring på tvers av sosioøkonomisk status.</p>
             </div>
-            <p class="footnote">* Medlemmer betaler en årlig kontingent på kun 50 kr. Vi søker midler for å sikre helt gratis forbruksmateriell for alle under 24 år.</p>
+            <p class="footnote">* Kontingent på 50 kr/år. Vi søker midler for gratis forbruksmateriell.</p>
         </div>
     </section>
 
-    <section id="sustainability" class="section-dark">
+    <section id="sustainability" class="section-light">
         <div class="container">
             <h2>Bærekraft og Ressursbevissthet</h2>
             <div class="split-content">
                 <div class="content-box">
                     <h3>Reparasjon og Gjenbruk</h3>
-                    <p>Vi lærer hvordan vi fikser i stedet for å kaste. Verkstedet er et senter for sirkulær tenking.</p>
+                    <p>Vi lærer å fikse i stedet for å kaste. Verkstedet er et senter for sirkulær tenking.</p>
                 </div>
                 <div class="content-box">
                     <h3>Reservedeler</h3>
-                    <p>Med 3D-printing produserer vi deler som forlenger levetiden til produkter som ellers ville blitt avfall.</p>
+                    <p>3D-printing forlenger levetiden til produkter gjennom produksjon av unike reservedeler.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="challenges" class="section-light">
+    <section id="challenges" class="section-dark">
         <div class="container">
             <h2>Tekniske Utfordringer</h2>
             <div class="equipment-grid">
                 <div class="equip-card challenge-card">
                     <h3>MacBooks</h3>
-                    <p>Vi trenger kraftig maskinvare for å drive programvareen bak maskinparken.</p>
+                    <p>Behov for kraftig maskinvare for avansert designprogramvare.</p>
                 </div>
                 <div class="equip-card challenge-card">
                     <h3>Nettverk</h3>
-                    <p>Vi trenger et robust IT-miljø for trådløs maskinkommunikasjon.</p>
+                    <p>Robust IT-miljø for trådløs maskinstyring.</p>
                 </div>
                 <div class="equip-card challenge-card">
                     <h3>Infrastruktur</h3>
-                    <p>Fokus på strømkapasitet og ventilasjon/avsug for trygg produksjon.</p>
+                    <p>Fokus på strøm og ventilasjon for trygg produksjon.</p>
                 </div>
             </div>
         </div>
@@ -113,7 +158,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Foreningen Bjørnsveen Skaperverksted. Samarbeidspartner: Bjørnsveen Ungdomsskole og Gjøvik Kommune.</p>
+            <p>&copy; 2026 Foreningen Bjørnsveen Skaperverksted. Samarbeid: Bjørnsveen Ungdomsskole og Gjøvik Kommune.</p>
         </div>
     </footer>
 
