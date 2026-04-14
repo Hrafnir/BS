@@ -1,11 +1,11 @@
-/* Version: #11 */
+/* Version: #13 */
 
 // === SEKSJON: Konfigurasjon og Data ===
 const equipmentData = {
     'bambu': {
         title: 'Bambu Lab P2S Combo',
         description: 'Våre mest avanserte 3D-printere med AMS (Automatic Material System). Disse maskinene kan printe i opptil 4 farger samtidig og er kjent for sin ekstreme hastighet og pålitelighet. Perfekt for både nybegynnere og viderekomne skapere.',
-        link: 'https://bambulab.com/en/p2s' // Lenken er nå rettet
+        link: 'https://bambulab.com/en/p2s'
     },
     'prusa': {
         title: 'Prusa Mini+ Maskiner',
@@ -31,13 +31,14 @@ const equipmentData = {
 
 // === SEKSJON: Initialisering ===
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('[SYSTEM] script.js Versjon #11 lastet inn.');
+    console.log('[SYSTEM] script.js Versjon #13 lastet inn.');
     console.log('[SYSTEM] Initialiserer Bjørnsveen Skaperverksted interaksjonsmoduler...');
 
     initNavigation();
     initScrollTracking();
     initEquipmentSelector();
-    initTabs(); // Ny funksjon lagt til
+    initTabs(); 
+    initTimeline(); // Ny modul for tidslinjen
 });
 
 // === SEKSJON: Utstyrsvelger (Dropdown Logikk) ===
@@ -49,7 +50,7 @@ function initEquipmentSelector() {
     const linkElement = document.getElementById('product-link');
 
     if (!selectElement) {
-        console.error('[FEIL] Kunne ikke finne #equipment-select i DOM.');
+        console.log('[UI] Utstyrsvelger ikke funnet på denne siden.');
         return;
     }
 
@@ -59,76 +60,88 @@ function initEquipmentSelector() {
         const selectedKey = event.target.value;
         const data = equipmentData[selectedKey];
 
-        console.log(`[EVENT] Bruker valgte utstyr: ${selectedKey}`);
-
         if (data) {
             titleElement.innerText = data.title;
             descElement.innerText = data.description;
             linkElement.href = data.link;
-
             infoCard.classList.remove('hidden');
-            
             console.log(`[UI] Informasjonskort oppdatert for: ${data.title}`);
-            console.log(`[UI] Lenke satt til: ${data.link}`);
         } else {
-            console.warn(`[ADVARSEL] Fant ingen data for nøkkel: ${selectedKey}`);
             infoCard.classList.add('hidden');
         }
     });
 }
 
-// === SEKSJON: Tabs Logikk (Hvem er vi?) ===
+// === SEKSJON: Tabs Logikk (For om-oss.html) ===
 function initTabs() {
-    console.log('[UI] Initialiserer Tab-navigasjon for Om Oss-seksjonen.');
     const tabControls = document.querySelectorAll('.tab-control');
     const tabPanes = document.querySelectorAll('.tab-pane');
 
     if (tabControls.length === 0 || tabPanes.length === 0) {
-        console.warn('[UI] Fant ingen tabs å initialisere. Sjekk HTML-strukturen.');
-        return;
+        return; // Stille exit hvis vi ikke er på om-oss siden
     }
+
+    console.log('[UI] Initialiserer Tab-navigasjon.');
 
     tabControls.forEach(control => {
         control.addEventListener('click', () => {
             const targetId = control.getAttribute('data-target');
-            console.log(`[EVENT] Tab klikket. Bytter til: ${targetId}`);
-
-            // 1. Fjern 'active'-klassen fra alle knapper og innholdspaneler
+            
             tabControls.forEach(btn => btn.classList.remove('active'));
             tabPanes.forEach(pane => pane.classList.remove('active'));
 
-            // 2. Legg 'active'-klassen på den klikkede knappen
             control.classList.add('active');
-
-            // 3. Finn riktig panel og gjør det synlig
             const targetPane = document.getElementById(targetId);
             if (targetPane) {
                 targetPane.classList.add('active');
-                console.log(`[UI] Viser tab-innhold for: ${targetId}`);
-            } else {
-                console.error(`[FEIL] Fant ikke tab-panel med ID: ${targetId}`);
+                console.log(`[UI] Viser tab-innhold: ${targetId}`);
             }
         });
     });
 }
 
+// === SEKSJON: Tidslinje Animasjon (Ny funksjon) ===
+function initTimeline() {
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    if (timelineItems.length === 0) return;
+
+    console.log('[UI] Initialiserer dynamisk tidslinje.');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -30% 0px', // Trigger animasjonen når elementet er 30% opp fra bunnen av skjermen
+        threshold: 0.1
+    };
+
+    const timelineObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Fjern active-klassen fra alle, og legg til på den som er mest i fokus
+                timelineItems.forEach(item => item.classList.remove('active'));
+                entry.target.classList.add('active');
+                
+                const dateText = entry.target.querySelector('.timeline-date').innerText;
+                console.log(`[TIDSLINJE] Fase markert som aktiv: ${dateText}`);
+            }
+        });
+    }, observerOptions);
+
+    timelineItems.forEach(item => timelineObserver.observe(item));
+}
+
 // === SEKSJON: Navigasjonshåndtering ===
 function initNavigation() {
-    console.log('[NAVIGASJON] Initialiserer lenkelyttere.');
     const navLinks = document.querySelectorAll('.nav-links a, .cta-button');
-
     navLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
+        link.addEventListener('click', () => {
             const destination = link.getAttribute('href');
-            console.log(`[NAVIGASJON] Bruker klikket på: ${link.innerText || 'CTA'} -> Mål: ${destination}`);
+            console.log(`[NAVIGASJON] Navigerer til: ${destination}`);
         });
     });
 }
 
 // === SEKSJON: Scroll Tracking ===
 function initScrollTracking() {
-    console.log('[SCROLL] Starter seksjons-overvåking.');
-    
     const sections = document.querySelectorAll('section, header');
     const observerOptions = {
         root: null,
@@ -150,4 +163,4 @@ function initScrollTracking() {
 
 console.log('[SYSTEM] Alle moduler i script.js er operative.');
 
-/* Version: #11 */
+/* Version: #13 */
