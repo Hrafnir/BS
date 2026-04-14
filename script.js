@@ -1,11 +1,11 @@
-/* Version: #10 */
+/* Version: #11 */
 
 // === SEKSJON: Konfigurasjon og Data ===
 const equipmentData = {
     'bambu': {
         title: 'Bambu Lab P2S Combo',
         description: 'Våre mest avanserte 3D-printere med AMS (Automatic Material System). Disse maskinene kan printe i opptil 4 farger samtidig og er kjent for sin ekstreme hastighet og pålitelighet. Perfekt for både nybegynnere og viderekomne skapere.',
-        link: 'https://bambulab.com/en/p1'
+        link: 'https://bambulab.com/en/p2s' // Lenken er nå rettet
     },
     'prusa': {
         title: 'Prusa Mini+ Maskiner',
@@ -31,12 +31,13 @@ const equipmentData = {
 
 // === SEKSJON: Initialisering ===
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('[SYSTEM] script.js Versjon #10 lastet inn.');
-    console.log('[SYSTEM] Initialiserer Bjørnsveen Skaperverksted interaksjonsmodul...');
+    console.log('[SYSTEM] script.js Versjon #11 lastet inn.');
+    console.log('[SYSTEM] Initialiserer Bjørnsveen Skaperverksted interaksjonsmoduler...');
 
     initNavigation();
     initScrollTracking();
     initEquipmentSelector();
+    initTabs(); // Ny funksjon lagt til
 });
 
 // === SEKSJON: Utstyrsvelger (Dropdown Logikk) ===
@@ -61,12 +62,10 @@ function initEquipmentSelector() {
         console.log(`[EVENT] Bruker valgte utstyr: ${selectedKey}`);
 
         if (data) {
-            // Oppdaterer innholdet i kortet
             titleElement.innerText = data.title;
             descElement.innerText = data.description;
             linkElement.href = data.link;
 
-            // Viser kortet med en enkel animasjonseffekt via CSS (håndteres av klassen)
             infoCard.classList.remove('hidden');
             
             console.log(`[UI] Informasjonskort oppdatert for: ${data.title}`);
@@ -75,6 +74,41 @@ function initEquipmentSelector() {
             console.warn(`[ADVARSEL] Fant ingen data for nøkkel: ${selectedKey}`);
             infoCard.classList.add('hidden');
         }
+    });
+}
+
+// === SEKSJON: Tabs Logikk (Hvem er vi?) ===
+function initTabs() {
+    console.log('[UI] Initialiserer Tab-navigasjon for Om Oss-seksjonen.');
+    const tabControls = document.querySelectorAll('.tab-control');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+
+    if (tabControls.length === 0 || tabPanes.length === 0) {
+        console.warn('[UI] Fant ingen tabs å initialisere. Sjekk HTML-strukturen.');
+        return;
+    }
+
+    tabControls.forEach(control => {
+        control.addEventListener('click', () => {
+            const targetId = control.getAttribute('data-target');
+            console.log(`[EVENT] Tab klikket. Bytter til: ${targetId}`);
+
+            // 1. Fjern 'active'-klassen fra alle knapper og innholdspaneler
+            tabControls.forEach(btn => btn.classList.remove('active'));
+            tabPanes.forEach(pane => pane.classList.remove('active'));
+
+            // 2. Legg 'active'-klassen på den klikkede knappen
+            control.classList.add('active');
+
+            // 3. Finn riktig panel og gjør det synlig
+            const targetPane = document.getElementById(targetId);
+            if (targetPane) {
+                targetPane.classList.add('active');
+                console.log(`[UI] Viser tab-innhold for: ${targetId}`);
+            } else {
+                console.error(`[FEIL] Fant ikke tab-panel med ID: ${targetId}`);
+            }
+        });
     });
 }
 
@@ -116,4 +150,4 @@ function initScrollTracking() {
 
 console.log('[SYSTEM] Alle moduler i script.js er operative.');
 
-/* Version: #10 */
+/* Version: #11 */
