@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bjørnsveen Skaperverksted - En Bærekraftig Arena</title>
+    <title>Bjørnsveen Skaperverksted - Utstyr og Muligheter</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,11 +15,11 @@
         <ul class="nav-links">
             <li><a href="#hero">Hjem</a></li>
             <li><a href="#about">Visjon</a></li>
-            <li><a href="#school">Skole & Fag</a></li>
+            <li><a href="#current-equipment">Vårt Utstyr</a></li>
             <li><a href="#inclusion">Inkludering</a></li>
             <li><a href="#sustainability">Bærekraft</a></li>
             <li><a href="#challenges">Utfordringer</a></li>
-            <li><a href="#equipment">Maskinpark</a></li>
+            <li><a href="#equipment">Fremtidsplaner</a></li>
         </ul>
     </nav>
 
@@ -28,7 +28,7 @@
             <img src="images/BS.png" alt="Bjørnsveen Skaperverksted Logo" class="hero-logo">
             <h1>Bjørnsveen Skaperverksted</h1>
             <p class="hero-subtitle">En levende idé i konstant vekst og utvikling</p>
-            <a href="#about" class="cta-button">Utforsk mulighetene</a>
+            <a href="#current-equipment" class="cta-button">Se hva vi har i dag</a>
         </div>
     </header>
 
@@ -39,7 +39,32 @@
         </div>
     </section>
 
-    <section id="school" class="section-dark">
+    <section id="current-equipment" class="section-dark">
+        <div class="container">
+            <h2>Vårt Utstyr i Dag</h2>
+            <p class="section-intro">Vi er allerede godt i gang! Her er en oversikt over maskinene som er operative i verkstedet akkurat nå.</p>
+            
+            <div class="dropdown-container">
+                <label for="equipment-select">Velg en maskin for å lese mer:</label>
+                <select id="equipment-select" class="styled-select">
+                    <option value="" disabled selected>-- Velg utstyr --</option>
+                    <option value="bambu">2x Bambu Lab P2S Combo</option>
+                    <option value="prusa">3x Prusa Mini+ maskiner</option>
+                    <option value="cricut">3x Cricut Maker vinylkuttere</option>
+                    <option value="varmepresse">Varmepresse</option>
+                    <option value="janome">8x Janome Symaskiner</option>
+                </select>
+                
+                <div id="equipment-info-card" class="info-card hidden">
+                    <h3 id="selected-title">Maskinnavn</h3>
+                    <p id="selected-description">Beskrivelse av maskinen og dens bruksområde vil vises her.</p>
+                    <a href="#" id="product-link" target="_blank" class="secondary-button">Gå til produktside</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="school" class="section-light">
         <div class="container">
             <h2>Modernisering av Skolehverdagen</h2>
             <p class="section-intro">Gjennom tett sambruk sikrer vi at 300 ungdomsskoleelever har tilgang til fremtidens verktøy i skoletiden.</p>
@@ -56,84 +81,83 @@
                 </div>
                 <div class="content-box">
                     <h3>Samarbeid med Kommunen</h3>
-                    <p>I tett samarbeid med <strong>Gjøvik Kommune</strong> bygger vi en bro mellom den formelle skolen og det frivillige fritidstilbudet, som sikrer optimal ressursutnyttelse og tilgjengelighet for alle.</p>
+                    <p>I tett samarbeid med <strong>Gjøvik Kommune</strong> bygger vi en bro mellom den formelle skolen og det frivillige fritidstilbudet.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="inclusion" class="section-light">
+    <section id="inclusion" class="section-dark">
         <div class="container">
             <h2>En Arena for Alle</h2>
-            <p class="highlight-text">Sosioøkonomisk status betyr ingenting.</p>
-            <div class="inclusion-grid">
-                <p>Bjørnsveen Skaperverksted er et lavterskeltilbud som fanger opp grupper som ikke alltid finner sin plass i tradisjonelle aktiviteter som idrett. Her er det ingen krav til fysiske prestasjoner – bare til nysgjerrighet.</p>
-                <p>Ved å tilby <strong>100% gratis deltakelse</strong> for alle under 24 år, fjerner vi økonomiske barrierer. Vi gir ungdommer opplæring i avanserte digitale verktøy, og skaper en arena for mestring og tilhørighet på tvers av bakgrunn.</p>
+            <p class="highlight-text">Gratis* for alle under 24 år.</p>
+            <div class="inclusion-grid-dark">
+                <div class="text-block">
+                    <p>Bjørnsveen Skaperverksted er et lavterskeltilbud som fanger opp grupper som ikke alltid finner sin plass i tradisjonelle aktiviteter som idrett. Her er det ingen krav til fysiske prestasjoner – bare til nysgjerrighet.</p>
+                </div>
+                <div class="text-block">
+                    <p>Vi fjerner økonomiske barrierer og gir ungdommer opplæring i avanserte digitale verktøy. Vi skaper en arena for mestring og tilhørighet på tvers av bakgrunn.</p>
+                </div>
             </div>
+            <p class="footnote">* Medlemmer betaler en årlig kontingent på kun 50 kr. Vi søker for øyeblikket om midler for å kunne tilby gratis forbruksmateriell til alle under 24 år.</p>
         </div>
     </section>
 
-    <section id="sustainability" class="section-dark">
+    <section id="sustainability" class="section-light">
         <div class="container">
             <h2>Bærekraft og Ressursbevissthet</h2>
             <p class="section-intro">Vi utdanner morgendagens skapere til å tenke sirkulært og ta vare på ressursene våre.</p>
             <div class="split-content">
                 <div class="content-box">
                     <h3>Reparasjon og Gjenbruk</h3>
-                    <p>I stedet for å kaste, lærer vi hvordan vi kan fikse. Verkstedet fungerer som et senter for reparasjon, hvor vi gir gamle gjenstander nytt liv gjennom kreativitet og moderne teknologi.</p>
+                    <p>I stedet for å kaste, lærer vi hvordan vi kan fikse. Verkstedet fungerer som et senter for reparasjon.</p>
                 </div>
                 <div class="content-box">
                     <h3>Produksjon av Reservedeler</h3>
-                    <p>Med 3D-printing kan vi produsere reservedeler som ellers er umulige å få tak i. Ved å printe en liten plastdel kan vi forlenge levetiden til større produkter med mange år, og dermed redusere unødvendig avfall.</p>
+                    <p>Med 3D-printing kan vi produsere reservedeler som ellers er umulige å få tak i, og forlenge levetiden til hverdagsprodukter.</p>
                 </div>
-            </div>
-            <div class="sustainability-focus">
-                <p><strong>Vårt fokus:</strong> Vi skaper en bevissthet rundt ressursbruk. Ved å forstå hvordan ting er laget, får de unge en dypere respekt for materialer og miljøet.</p>
             </div>
         </div>
     </section>
 
-    <section id="challenges" class="section-light">
+    <section id="challenges" class="section-dark">
         <div class="container">
             <h2>Tekniske Utfordringer & Behov</h2>
-            <p class="section-intro">For å drive en moderne maskinpark kreves det mer enn bare maskiner.</p>
             <div class="equipment-grid">
                 <div class="equip-card challenge-card">
                     <h3>Maskinvare (MacBooks)</h3>
-                    <p>Vi har et kritisk behov for moderne og kraftige datamaskiner (MacBooks) for å drive avansert programvare for 3D-modellering og design.</p>
+                    <p>Vi har et kritisk behov for moderne og kraftige datamaskiner (MacBooks) for å drive avansert programvare.</p>
                 </div>
                 <div class="equip-card challenge-card">
                     <h3>Nettverk & IT</h3>
-                    <p>Etablering av et robust nettverk som takler tung datatrafikk og trådløs kommunikasjon med maskinparken.</p>
+                    <p>Etablering av et robust nettverk som takler tung datatrafikk og trådløs maskinkommunikasjon.</p>
                 </div>
                 <div class="equip-card challenge-card">
                     <h3>Infrastruktur</h3>
-                    <p>Sikring av tilstrekkelig strømkapasitet og forskriftsmessig ventilasjon for trygg drift av laserkuttere.</p>
+                    <p>Sikring av strømkapasitet og forskriftsmessig ventilasjon for trygg drift.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="equipment" class="section-dark">
+    <section id="equipment" class="section-light">
         <div class="container">
-            <h2>Spesialiserte Verkstedsoner</h2>
+            <h2>Fremtidsplaner (Søknad om midler)</h2>
+            <p class="status-note"><em>Status: Søkt om 803 000 kr. Midler er ikke innvilget pr. nå.</em></p>
             <div class="equipment-grid">
                 <div class="equip-card">
-                    <h3>Glassoasen (FabLab)</h3>
-                    <p>Digital fabrikasjon:</p>
+                    <h3>Digital Fabrikasjon</h3>
                     <ul>
-                        <li>8 stk. 3D-printere (Bambu Lab)</li>
+                        <li>6 stk. Bambu Lab P2S (Ytterligere)</li>
+                        <li>1 stk. Bambu Lab H2C</li>
                         <li>3 stk. xTool laserkuttere</li>
-                        <li>Prototyping og reservedeler</li>
                     </ul>
                 </div>
                 <div class="equip-card">
-                    <h3>Biblioteket (SoftLab)</h3>
-                    <p>Tekstiler og trykk:</p>
+                    <h3>SoftLab Utvidelse</h3>
                     <ul>
-                        <li>Symaskiner & Overlock</li>
-                        <li>Vinylkuttere & Varmepresse</li>
-                        <li>Grafisk design og tekstiltrykk</li>
+                        <li>Overlock- og broderimaskin</li>
+                        <li>Avansert tekstiltrykk</li>
                     </ul>
                 </div>
             </div>
