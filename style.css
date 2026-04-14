@@ -1,4 +1,4 @@
-/* Version: #6 */
+/* Version: #7 */
 
 /* === SEKSJON: Globale variabler og Reset === */
 :root {
@@ -9,7 +9,8 @@
     --text-dark: #333333;
     --text-light: #ffffff;
     --container-width: 1200px;
-    --accent-blue: #00d2ff; /* Aksentfarge for tekniske utfordringer */
+    --accent-blue: #00d2ff; /* Aksentfarge for tekniske utfordringer og bærekraft */
+    --success-green: #2ecc71; /* Mulig fremtidig bruk for bærekraft/suksess */
 }
 
 * {
@@ -24,7 +25,7 @@ html {
 }
 
 body {
-    line-height: 1.7; /* Økt litt for bedre lesbarhet på lengre tekster */
+    line-height: 1.7;
     color: var(--text-dark);
     background-color: var(--bg-light);
 }
@@ -95,7 +96,6 @@ body {
 }
 
 .hero-logo {
-    /* Størrelse: 250% av opprinnelig 250px = 625px */
     width: 100%;
     max-width: 625px;
     height: auto;
@@ -219,7 +219,6 @@ section h2::after {
     margin-bottom: 2rem;
 }
 
-/* Ny Inkluderings-grid for bedre tekstlayout */
 .inclusion-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -237,7 +236,6 @@ section h2::after {
     color: #555;
 }
 
-/* Ny styling for tilpassede lister (Skolefag) */
 .custom-list {
     list-style: none;
     margin-top: 1.5rem;
@@ -257,6 +255,24 @@ section h2::after {
     left: 0;
     font-weight: bold;
     font-size: 1.2rem;
+}
+
+/* Bærekraft Fokusboks */
+.sustainability-focus {
+    background-color: rgba(0, 210, 255, 0.05);
+    border-left: 4px solid var(--accent-blue);
+    padding: 1.5rem 2rem;
+    margin-top: 3rem;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.15rem;
+}
+
+.section-dark .sustainability-focus {
+    color: #d1d1e0;
+}
+
+.section-dark .sustainability-focus strong {
+    color: var(--accent-blue);
 }
 
 /* === SEKSJON: Grid og Kort === */
@@ -293,36 +309,53 @@ section h2::after {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* Spesifikk styling for utfordrings-kort */
 .challenge-card {
     background-color: #ffffff;
     border-top: 5px solid var(--accent-blue);
     color: var(--text-dark);
 }
 
-.section-dark .challenge-card {
-    background-color: rgba(255, 255, 255, 0.05); /* Tilpasset for mørk bakgrunn i seksjon #6 */
-    color: var(--text-light);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-top: 5px solid var(--accent-blue);
-}
-
 .challenge-card h3 {
     color: var(--accent-blue) !important;
 }
 
-.section-light .challenge-card p {
+/* Eksplisitt fargestyring for tekst i kort basert på omgivelsene (Løser lesbarhetsproblemet) */
+.section-light .equip-card h3,
+.section-light .challenge-card h3 {
+    color: var(--text-dark);
+}
+
+.section-light .equip-card p,
+.section-light .challenge-card p,
+.section-light .equip-card li {
     color: #555;
+}
+
+.section-dark .equip-card,
+.section-dark .challenge-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-dark .challenge-card {
+    border-top: 5px solid var(--accent-blue);
+}
+
+.section-dark .equip-card h3,
+.section-dark .challenge-card h3 {
+    color: var(--text-light);
+}
+
+/* Tvinger teksten til å bli lys og leselig på mørk bakgrunn */
+.section-dark .equip-card p,
+.section-dark .challenge-card p,
+.section-dark .equip-card li {
+    color: #d1d1e0; 
 }
 
 .equip-card h3 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    color: var(--text-light);
-}
-
-.section-light .equip-card h3 {
-    color: var(--text-dark);
 }
 
 .equip-card ul {
@@ -334,11 +367,6 @@ section h2::after {
     margin-bottom: 0.8rem;
     padding-left: 1.5rem;
     position: relative;
-    color: #d1d1e0;
-}
-
-.section-light .equip-card li {
-    color: #555;
 }
 
 .equip-card li::before {
@@ -383,4 +411,4 @@ footer {
     }
 }
 
-/* Version: #6 */
+/* Version: #7 */
